@@ -1,10 +1,11 @@
 from csv import DictReader
-
+Found=False                                                                     #bool variable to check if component in library, default false
 IC_Name=input("Please enter the IC name: ")                                     #takes text on the IC as input name
 with open("IC_Library.csv", "r") as csv_file:                                   #open IC Library
     IC_Lib=DictReader(csv_file)                                                 #uses csv reader to treat it as a dictionary
     for row in IC_Lib:                                                          #cycles through all rows in the Library
         if row['ï»¿name']==IC_Name:                                             #checks if the name matches the input
+            Found=True                                                          #sets found to true if the input matches a name in the library
             print(row["ï»¿name"],':',row["description"])                        #outputs name and description
             print(row["link to datasheet"])                                     #provides link to datasheet
             pinout=row['pinout'].split("|")                                     #splits pinout in half using marker in the CSV
@@ -15,3 +16,5 @@ with open("IC_Library.csv", "r") as csv_file:                                   
             for i in range(int(length)):
                 if i==0: print(sub0_pinout[i],'\t|--o--|',sub1_pinout[i])       #prints first pinout with a marker at the top like a real IC
                 else:    print(sub0_pinout[i],'\t|-----|',sub1_pinout[i])       #prints the rest of the pinout as it would be for the IC
+if Found==False:                                                                #if found never gets set to true the component is not in the library so reports this to the user
+    print("no component Found")

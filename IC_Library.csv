@@ -1,7 +1,7 @@
 ﻿name,description,link to datasheet,pinout
 4N25,"Optocoupler, Phototransistor Output, with Base Connection",https://www.vishay.com/docs/83725/4n25.pdf,"1-A,2-C,3-NC|4-E,5-C,6-B"
 741CN,Operational Amplifier,https://www.ti.com/lit/ds/symlink/lm741.pdf,"1-OFFSET_NULL,2-INVERTING_INPUT,3-NON_INVERTING_INPUT,4-V-|5-OFSET_NULL,6-OUTPUT,7-V+,8-NC"
-CD4001,CMOS NOR Gates (4),https://www.ti.com/lit/ds/symlink/cd4002b.pdf,"1-A,2-B,3-J,4-K,5-C,6-D,7-VSS|8-E,9-F,10-L,11-M,12-G,13-H,14-VDD"
+CD4001BE,CMOS NOR Gates (4),https://www.ti.com/lit/ds/symlink/cd4002b.pdf,"1-A,2-B,3-J,4-K,5-C,6-D,7-VSS|8-E,9-F,10-L,11-M,12-G,13-H,14-VDD"
 CD4013BE,CMOS Dual D-Type Flip-Flop,https://www.ti.com/lit/ds/symlink/cd4013b.pdf,"1-Q1,2-'Q1,3-CLK1,4-RST1,5-D1,6-SET1,7-Vss|8-SET2,9-D2,10-RST2,11-CLK2,12-'Q2,13-Q2,14-Vdd"
 CD40175BE,CMOS Quad D-Type FlipFlop,https://www.ti.com/lit/ds/symlink/cd40175b.pdf,"1-'CLEAR,2-Q1,3-'Q1,4-D1,5-D2,6-'Q2,7-Q2,8-VSS|9-CLOCK,10-Q3,11-'Q3,12-D3,13-D4,14-'Q4,15-Q4,16-VDD"
 CD40192BE,CMOS Presettable Up/Down Counters (Dual clock with reset),https://www.ti.com/lit/ds/symlink/cd40193b.pdf,"1-J2,2-Q2,3-Q1,4-CLK_DOWN,5-CLK_UP,6-Q3,7-Q4,8-VSS|9-J4,10-J3,11-'PRESET_ENABLE,12-'CARRY,13-'BORROW,14-RST,15-J1,16-VDD"

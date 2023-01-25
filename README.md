@@ -1,4 +1,4 @@
-# Immersive-Engineering-Headset-Demo
+# An Augmented Reality Solution for IC Identification
 
 ## Hardware 
 

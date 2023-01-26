@@ -1,7 +1,8 @@
 import subprocess
 try:
      #subprocess.call(r'OCR.bat')                                               # runs the OCR.bat file, is commented out for testing purposes
-     file_read = open("gcloudRead.txt", "r")                                    # opening and reading the file 
+     file_name = "gcloudRead.txt"
+     file_read = open(file_name, "r")                                    # opening and reading the file 
      text = '"text":'                                                           # asking the user to enter the string to be searched
      lines = file_read.readlines()                                              # reading file content line by line.
      new_list = []

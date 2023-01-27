@@ -12,3 +12,6 @@ Tools > Board > AI-Thinker ESP32-CAM  / ESP32 Rover Module
 **Install two libraries listed in this repo:**  
 
 _AsyncTCP-master.zip_ & _ESPAsyncWebServer-master.zip_  
+
+_SOMETIMES THE BOARD WILL HANG ON DONE UPLOADING: When you see the “Done uploading” message press the RST button_
+

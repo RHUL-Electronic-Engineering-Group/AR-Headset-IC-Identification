@@ -1,9 +1,9 @@
 import os
 try:
-     os.system('raspistill -o test.jpg --nopreview --exposure sports --timeout 1')
-     os.system('./OCR.sh')
-     file_name = "gcloudRead.txt"
-     file_read = open(file_name, "r")                                    # opening and reading the file 
+    # os.system('./OCR.sh')
+     file_name = "\gcloudRead.txt"
+     
+file_read = open(file_name, "r")                                    # opening and reading the file 
      text = '"text":'                                                           # asking the user to enter the string to be searched
      lines = file_read.readlines()                                              # reading file content line by line.
      new_list = []
@@ -21,9 +21,7 @@ try:
           foundText = foundText.replace('\\n',',')
           foundText = foundText.replace('"','')
           print(foundText)
-          finalPrint = 'python3 lib_reader_2.py {} '.format(foundText)
-          print(finalPrint)
-          os.system(finalPrint)    
+          subprocess.run(['python','IC_LIB_READER.py',foundText])    
 
 except :                                                                        # entering except block if input file doesn't exist 
     print("\nThe file doesn't exist!")

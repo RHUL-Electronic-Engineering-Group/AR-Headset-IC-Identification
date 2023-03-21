@@ -72,8 +72,11 @@ void onConnectionEstablished()
   // });
 
   client.subscribe("immersive_headset_demo", [](const String & topic, const String & payload) {
-   Serial.println(payload);
-   
+    Serial.println(payload);  // Print the message to the Serial monitor
+    tft.setCursor(0, 60);     // Set the cursor position on the TFT screen
+    tft.setTextColor(ST77XX_WHITE);  // Set the text color to white
+    tft.setTextSize(2);       // Set the text size to 2
+    tft.print(payload);       // Print the message to the TFT screen
   });
 
   // Execute delayed instructions

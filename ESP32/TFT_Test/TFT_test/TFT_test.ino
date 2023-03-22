@@ -12,8 +12,8 @@
 #define TFT_RST  27 // Reset pin (could connect to RST pin)
 
 EspMQTTClient client(
-  "JasonHotspot",
-  "jason12345",
+  "AdamHotspot",
+  "adam12345",
   "test.mosquitto.org",  // MQTT Broker server ip
   "",   // Can be omitted if not needed
   "",   // Can be omitted if not needed
@@ -39,7 +39,7 @@ void setup(void) {
   client.enableOTA(); // Enable OTA (Over The Air) updates. Password defaults to MQTTPassword. Port is the default OTA port. Can be overridden with enableOTA("password", port).
   client.enableLastWillMessage("TestClient/lastwill", "I am going offline");  // You can activate the retain flag by setting the third parameter to true
 
-  tft.setTextWrap(false);
+  tft.setTextWrap(true);
   tft.fillScreen(ST77XX_BLACK);
   tft.setCursor(0, 30);
   tft.setTextColor(ST77XX_RED);
@@ -61,16 +61,6 @@ void setup(void) {
 // WARNING : YOU MUST IMPLEMENT IT IF YOU USE EspMQTTClient
 void onConnectionEstablished()
 {
-
-  // Subscribe to "mytopic/test" and display received message to Serial
-  // client.subscribe("immersive_headset_demo", [](const String & payload) {
-  // Serial.println(payload);
-   
-  // 
-  // ;
-
-  // });
-
   client.subscribe("immersive_headset_demo", [](const String & topic, const String & payload) {
     Serial.println(payload);  // Print the message to the Serial monitor
     tft.setCursor(0, 60);     // Set the cursor position on the TFT screen
@@ -78,14 +68,10 @@ void onConnectionEstablished()
     tft.setTextSize(2);       // Set the text size to 2
     tft.print(payload);       // Print the message to the TFT screen
   });
-
-  // Execute delayed instructions
- // client.executeDelayed(5 * 1000, []() {
- //   client.publish("immersive_headset_demo/testpublish", "Maintaining Connection");
- // });
 }
- 
+
+
+
 void loop() {
   client.loop();
- 
 }

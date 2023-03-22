@@ -11,9 +11,12 @@
 #define TFT_DC   33  // Data Command control pin
 #define TFT_RST  27 // Reset pin (could connect to RST pin)
 
+String message="Start";
+String old_message="Start";
+
 EspMQTTClient client(
-  "AdamHotspot",
-  "adam12345",
+  "JasonHotspot",
+  "jason12345",
   "test.mosquitto.org",  // MQTT Broker server ip
   "",   // Can be omitted if not needed
   "",   // Can be omitted if not needed
@@ -38,13 +41,6 @@ void setup(void) {
   client.enableHTTPWebUpdater(); // Enable the web updater. User and password default to values of MQTTUsername and MQTTPassword. These can be overridded with enableHTTPWebUpdater("user", "password").
   client.enableOTA(); // Enable OTA (Over The Air) updates. Password defaults to MQTTPassword. Port is the default OTA port. Can be overridden with enableOTA("password", port).
   client.enableLastWillMessage("TestClient/lastwill", "I am going offline");  // You can activate the retain flag by setting the third parameter to true
-
-  tft.setTextWrap(true);
-  tft.fillScreen(ST77XX_BLACK);
-  tft.setCursor(0, 30);
-  tft.setTextColor(ST77XX_RED);
-  tft.setTextSize(1);
-  
   Serial.begin(115200);
   pinMode(21, OUTPUT);
   pinMode(19, OUTPUT);
@@ -52,9 +48,13 @@ void setup(void) {
   digitalWrite(21, HIGH);
   digitalWrite(19, HIGH);
   digitalWrite(18, LOW);
-  tft.setRotation(2);
-  tft.init(240, 240, SPI_MODE2);    // Init ST7789 display 240x240 pixel
+  tft.setTextSize(1);
+  tft.setTextWrap(true);
   tft.fillScreen(ST77XX_BLACK);
+  tft.setTextColor(ST77XX_RED);
+  tft.setCursor(0, 30);
+  tft.init(240, 240, SPI_MODE2);    // Init ST7789 display 240x240 pixel
+  tft.setRotation(2);
 }
 
 // This function is called once everything is connected (Wifi and MQTT)
@@ -63,15 +63,30 @@ void onConnectionEstablished()
 {
   client.subscribe("immersive_headset_demo", [](const String & topic, const String & payload) {
     Serial.println(payload);  // Print the message to the Serial monitor
-    tft.setCursor(0, 60);     // Set the cursor position on the TFT screen
-    tft.setTextColor(ST77XX_WHITE);  // Set the text color to white
-    tft.setTextSize(2);       // Set the text size to 2
-    tft.print(payload);       // Print the message to the TFT screen
+    Serial.println("message set to payload");
+    message = payload;
+    Serial.println(message);
   });
 }
 
+void tftrefresh(void){
+  tft.setTextWrap(true);
+  tft.fillScreen(ST77XX_BLACK);
+  tft.setTextColor(ST77XX_RED);
+  tft.setCursor(0, 30);
+  tft.init(240, 240, SPI_MODE2);    // Init ST7789 display 240x240 pixel
+  tft.setRotation(2);
+}
 
 
 void loop() {
-  client.loop();
+  if (message == old_message){
+    client.loop();  
+  }
+  else{
+  old_message = message;
+  tftrefresh();
+  Serial.println(message);
+  tft.print(message);  
+  } 
 }

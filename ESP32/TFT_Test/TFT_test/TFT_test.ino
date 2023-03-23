@@ -13,6 +13,9 @@
 
 String message="Start";
 String old_message="Start";
+String Cat_Message="";
+int message_count=0;
+
 
 EspMQTTClient client(
   "JasonHotspot",
@@ -84,9 +87,15 @@ void loop() {
     client.loop();  
   }
   else{
-  old_message = message;
-  tftrefresh();
-  Serial.println(message);
-  tft.print(message);  
+    message_count++;
+    Cat_Message= Cat_Message + message;
+    if(message_count==3){
+      old_message = message;
+      tftrefresh();
+      Serial.println(Cat_Message);
+      tft.print(Cat_Message);
+      message_count=0;
+      Cat_Message="";
+    }
   } 
 }

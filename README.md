@@ -1,5 +1,9 @@
 # An Augmented Reality Solution for IC Identification
 
+  Headset model view           |  Headset wiring
+:-------------------------:|:-------------------------:
+![](https://raw.githubusercontent.com/RHUL-Electronic-Engineering-Group/AR-Headset-IC-Identification/main/Images/Demo1.jpg)  |  ![](https://raw.githubusercontent.com/RHUL-Electronic-Engineering-Group/AR-Headset-IC-Identification/main/Images/Demo.jpg)
+
 ## Hardware 
 
 * AR heads up display made for Phones (custom or off the shelf)  

@@ -43,5 +43,26 @@ _SOMETIMES THE BOARD WILL HANG ON DONE UPLOADING: When you see the “Done uploa
 * Paho MQTT
 * GCLOUD/Google AI access
 
+# Build environment
 
+**ESP32** > ESP-Headset > ESP-Headset.ino -> Upload to ESP 
+
+```C++
+EspMQTTClient client(
+  "****",                             // Network SSID
+  "****",                             // Network Password
+  "test.mosquitto.org",               // MQTT Broker server ip (we use public)
+  "username",                         // Can be omitted if not needed
+  "password",                         // Can be omitted if not needed
+  "ESP32-Headset-Demo-Immersive",     // Client name that uniquely identify your device
+  1883                                // The MQTT port, default to 1883. this line can be omitted
+);
+```
+
+**Raspberry Pi** > Python > OcrTextSearch.py OR OcrTextSearchButton.py
+
+```python
+sudo python3 OcrTextSearch.py
+```
+_If you have certain ICs that are not in the IC_Library.csv - add them and include their datasheet in the same format._
 

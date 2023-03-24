@@ -3,12 +3,13 @@
 ## Hardware 
 
 * AR heads up display made for Phones (custom or off the shelf)  
-* ESP32 AI-Thinker CAM  
-* FTDI programmer  
+* ESP32-s  
+* Raspberry Pi Zero W
 * 2x SPI IPS display 240x240 ST7789  
-* Rechargeable LiPo battery (3000mAh+)
+* Rechargeable LiPo battery (3000mAh+) or battery pack
 * Custom PCB for 2 displays
 * ESP and battery housing  
+* Raspberry Pi IC isolation chamber
 ## Dependancies 
 
 **Install custom board package: https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json**  

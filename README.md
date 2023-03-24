@@ -1,4 +1,4 @@
-# **ARIC** - An Augmented Reality Solution for IC Identification
+# **ARIC** - Augmented Reality for IC Identification
 
   Headset model view           |  Headset wiring
 :-------------------------:|:-------------------------:

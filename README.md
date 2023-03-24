@@ -16,6 +16,16 @@
 * Raspberry Pi IC isolation chamber
 ## Dependancies 
 
+### ESP32
+
+* Adafruit_ST7789
+* Adafruit_I2CDevice
+* Adafruit_GFX
+* SPI
+* EspMQTTClient
+
+**We use the open MQTT server "test.mosquitto.org".** 
+
 **Install custom board package: https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json**  
 File > Preferences > Additional Board Manager URLs  
 
@@ -23,6 +33,15 @@ File > Preferences > Additional Board Manager URLs
 Tools > Board > Boards Manager > ESP32 by Espressif Systems  
 
 **Select ESP32 AI thinker:**  
-Tools > Board > AI-Thinker ESP32-CAM  
+Tools > Board > ESP32-WROOM
 
 _SOMETIMES THE BOARD WILL HANG ON DONE UPLOADING: When you see the “Done uploading” message press the RST button_
+
+### Raspberry Pi
+
+* CSV
+* Paho MQTT
+* GCLOUD/Google AI access
+
+
+

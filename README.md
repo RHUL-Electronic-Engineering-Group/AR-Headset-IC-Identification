@@ -59,7 +59,7 @@ EspMQTTClient client(
 );
 ```
 
-We modified the Adafruit_GFX library to mirror text by default for our headset. In the ADAFRUIT_ST77XX:
+We modified the Adafruit_GFX library to mirror text by default for our headset. In the ADAFRUIT_ST77XX.h:
 
 ```C++
 
@@ -69,6 +69,14 @@ We modified the Adafruit_GFX library to mirror text by default for our headset. 
 #define ST77XX_MADCTL_ML 0x10
 #define ST77XX_MADCTL_RGB 0x4B // modifed code
 
+```
+
+In the ADAFRUIT_ST77XX.cpp:
+
+```C++
+void Adafruit_ST77xx::setColRowStart(int8_t col, int8_t row) {
+  _colstart = col;
+  _rowstart = -row; }
 ```
 
 **Raspberry Pi** > Python > OcrTextSearch.py OR OcrTextSearchButton.py

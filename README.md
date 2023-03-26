@@ -45,6 +45,8 @@ _SOMETIMES THE BOARD WILL HANG ON DONE UPLOADING: When you see the “Done uploa
 
 # Build environment
 
+## ESP32
+
 **ESP32** > ESP-Headset > ESP-Headset.ino -> Upload to ESP 
 
 ```C++
@@ -78,6 +80,8 @@ void Adafruit_ST77xx::setColRowStart(int8_t col, int8_t row) {
   _colstart = col;
   _rowstart = -row; }
 ```
+
+## Raspberry Pi
 
 **Raspberry Pi** > Python > OcrTextSearch.py OR OcrTextSearchButton.py
 

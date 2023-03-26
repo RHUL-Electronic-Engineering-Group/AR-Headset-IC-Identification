@@ -40,6 +40,7 @@ _SOMETIMES THE BOARD WILL HANG ON DONE UPLOADING: When you see the “Done uploa
 ### Raspberry Pi
 
 * CSV
+* Python
 * Paho MQTT
 * GCLOUD/Google AI access
 
